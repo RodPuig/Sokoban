@@ -59,7 +59,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
             actualizarString();
 
-            Debug.Log("posX: " + posX + " PosY: " + posY);
+            //Debug.Log("posX: " + posX + " PosY: " + posY);
             once = true;
         }
 
@@ -68,7 +68,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.DownArrow))
         {
             //personaje
-            if(nivel[posY+1 , posX] == '.')
+            if(nivel[posY+1 , posX] == '.' || nivel[posY + 1, posX] == '@')
             {
                 gameObject.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - rt.rect.height);
 
@@ -105,7 +105,7 @@ public class PlayerBehaviour : MonoBehaviour {
         }
         else if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (nivel[posY - 1, posX] == '.')
+            if (nivel[posY - 1, posX] == '.' || nivel[posY - 1, posX] == '@')
             {
                 gameObject.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + rt.rect.height);
 
@@ -141,7 +141,7 @@ public class PlayerBehaviour : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (nivel[posY, posX - 1] == '.')
+            if (nivel[posY, posX - 1] == '.' || nivel[posY, posX - 1] == '@')
             {
                 gameObject.transform.position = new Vector2(gameObject.transform.position.x - rt.rect.width, gameObject.transform.position.y);
 
@@ -177,7 +177,7 @@ public class PlayerBehaviour : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (nivel[posY, posX + 1] == '.')
+            if (nivel[posY, posX + 1] == '.' || nivel[posY, posX + 1] == '@')
             {
                 gameObject.transform.position = new Vector2(gameObject.transform.position.x + rt.rect.width, gameObject.transform.position.y);
 
